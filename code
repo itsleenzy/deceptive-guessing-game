@@ -1,0 +1,44 @@
+import random
+
+number = random.randint(1,100)
+
+guess = int(input("Guess a number: "))
+
+if guess == number:
+    print("You guessed the number")
+else:
+    
+    print("Game starts!")
+        
+    
+        
+    for v in range(1,11):
+        
+        guess = int(input("Guess a number: "))
+        
+        if guess == number:
+            
+            print("You guessed the number correct")
+            break
+        
+        
+        elif guess < number:
+            
+            stat = ['Your number is less than the actual','Your number is greater than the actual']
+            lie = [0.7,0.3]
+            op = random.choices(stat,weights=lie,k=1)[0]
+            print(op)
+        
+        elif guess == number:
+            
+            print("You guessed the number correct")
+            break
+        
+        else:
+            
+            stat = ['Your number is less than the actual','Your number is greater than the actual']
+            lie = [0.3,0.7]
+            op = random.choices(stat,weights=lie,k=1)[0]
+            print(op)
+            
+    print("Number = ",number)
